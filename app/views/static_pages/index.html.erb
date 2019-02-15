@@ -25,6 +25,9 @@
       });
       const ulTodos = $('.todo-list');
       ulTodos.html(htmlString);
+      $('.toggle').change(function() {
+        console.log('Toggle!');
+      })
     });
   });
 </script>
