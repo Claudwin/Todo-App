@@ -10,7 +10,13 @@
     <ul class="todo-list">
       
     </ul>
-  </section>
+    <hr/>
+  </section> 
+  <div id="itemsLeft">
+    Items Left
+    <span> </span>
+  </div>
+ 
 </section>
 
 <section class="author">
@@ -18,3 +24,20 @@
   application, built by
   <%= link_to "Claudwin Fortune", "http://github.com/Claudwin" %>
 </section>
+
+<script>
+ function itemsLeft() {
+        // $.get("/tasks").success(function (data) {
+        //     var count = 0;
+        //     $.each(data, function (index, task) {
+        //         if (!task.done) {
+        //             count++;
+        //         }
+        //     });
+        var count = $('ul.todo-list li:not(.completed)').length;
+            var itemsLeft = $('#itemsLeft span');
+            itemsLeft.html(count);
+        // });
+    }
+    itemsLeft();
+</script>
